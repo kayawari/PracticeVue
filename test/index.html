@@ -11,9 +11,11 @@
         <td>編集</td>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <list-item v-for="list in lists" v-bind:list="list"></list-item>
+    <tbody v-if="seen">
+      <tr v-for="list in lists">
+        <td>{{list.id}}</td>
+        <td>{{list.text}}</td>
+        <td><input v-model="list.text"></td>
       </tr>
     </tbody>
   </table>
@@ -22,13 +24,6 @@
 </div>
 
 <script>
-    Vue.component('list-item', {
-        props: ['list'],
-        template: '<td>{{list.id}}</td>' +
-                  '<td>{{list.text}}</td>' +
-                  '<td><input v-model="list.text"></td>'
-    });
-
     var app = new Vue({
         el: '#app',
         data: {
@@ -39,7 +34,7 @@
                 {id: 3, text: "鳥"},
                 {id: 4, text: "魚"}
             ],
-            seen: true
+            seen: true,
         },
         methods: {
             reverseList: function(){
@@ -53,5 +48,5 @@
                 }
             }
         }
-    });
+    })
 </script>
