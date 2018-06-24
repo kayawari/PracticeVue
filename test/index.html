@@ -1,0 +1,57 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<div id="app">
+  <h3>{{ message }}</h3>
+  <table>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>テキスト</td>
+        <td>編集</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <list-item v-for="list in lists" v-bind:list="list"></list-item>
+      </tr>
+    </tbody>
+  </table>
+  <button v-on:click="reverseList">Reverse List</button>
+  <button v-on:click="hideList">Hide List</button>
+</div>
+
+<script>
+    Vue.component('list-item', {
+        props: ['list'],
+        template: '<td>{{list.id}}</td>' +
+                  '<td>{{list.text}}</td>' +
+                  '<td><input v-model="list.text"></td>'
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'はじめまして Vue太郎です',
+            lists: [
+                {id: 1, text: "犬"},
+                {id: 2, text: "猫"},
+                {id: 3, text: "鳥"},
+                {id: 4, text: "魚"}
+            ],
+            seen: true
+        },
+        methods: {
+            reverseList: function(){
+                this.lists.reverse();
+            },
+            hideList: function(){
+                if(this.seen == true){
+                    this.seen = false;
+                } else {
+                    this.seen = true;
+                }
+            }
+        }
+    });
+</script>
