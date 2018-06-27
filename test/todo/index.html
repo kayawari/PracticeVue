@@ -5,13 +5,13 @@
 <table id="tasks-index" class="table table-striped">
     <thead>
     <tr>
-        <th>Name</th>
+        <th>ID: Name</thl>
         <th></th>
     </tr>
     </thead>
     <tbody>
     <tr v-for="task in tasks">
-        <td>{{ task.name }}</td>
+        <td>{{task.id}}: {{ task.name }}</td>
         <td>
             <div class="btn btn-danger" v-on:click="doneTask(task.id)">Done!</div>
         </td>
