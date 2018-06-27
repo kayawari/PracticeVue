@@ -9,7 +9,8 @@ var vm = new Vue({
         newTask: ''
     },
     methods: {
-        createTask: function(event){
+        createTask: function(){
+            // TODO： コメントが空の場合はボタンをdisabledにする
             var id = this.tasks.length + 1;
             this.tasks.push({
                 id: id,
