@@ -1,5 +1,5 @@
 var vm = new Vue({
-    el: '#tasks-index'
+    el: '#tasks-index',
     data: {
         tasks: [
             {id: 1, name: 'hoge'},
