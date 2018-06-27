@@ -17,6 +17,9 @@ var vm = new Vue({
                 name: this.newTask
             });
             this.newTask = '';
+        },
+        doneTask: function(task_id){
+            this.$delete(this.tasks, task_id - 1)
         }
     }
 })
