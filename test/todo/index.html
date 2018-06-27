@@ -16,12 +16,10 @@
             <div class="btn btn-danger">Done!</div>
         </td>
     </tr>
-
-
     <tr>
-        <td><input class="form-control"></td>
+        <td><input class="form-control" v-model="newTask"></td>
         <td>
-            <div class="btn btn-default">Create Task</div>
+            <button type="button" class="btn btn-default" v-on:click="createTask">Create Task</button>
         </td>
     </tr>
     </tbody>
