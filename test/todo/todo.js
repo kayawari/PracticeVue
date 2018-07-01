@@ -1,3 +1,8 @@
+var tasksItem = Vue.component('tasks-item', {
+    props: ['item'],
+    template: '<td>{{item.id}}: {{item.name}}</td>'
+})
+
 var vm = new Vue({
     el: '#tasks-index',
     data: {
@@ -7,6 +12,10 @@ var vm = new Vue({
             {id: 3, name: 'hogefuga'}
         ],
         newTask: ''
+    },
+    component: {
+        // componentをローカル登録する
+        'tasks-item': tasksItem
     },
     methods: {
         createTask: function(){

@@ -11,10 +11,8 @@
     </thead>
     <tbody>
     <tr v-for="task in tasks">
-        <td>{{task.id}}: {{ task.name }}</td>
-        <td>
-            <div class="btn btn-danger" v-on:click="doneTask(task.id)">Done!</div>
-        </td>
+        <td is='tasks-item' v-bind:item="task"></td>
+        <td><div class="btn btn-danger" v-on:click="doneTask(task.id)">Done!</div></td>
     </tr>
     <tr>
         <td><input class="form-control" v-model="newTask"></td>
