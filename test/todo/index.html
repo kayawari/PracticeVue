@@ -12,7 +12,7 @@
     <tbody>
     <tr v-for="(task, index) in tasks">
         <td is='tasks-item' v-bind="{item: task, index: index}"></td>
-        <td><div class="btn btn-danger" v-on:click="doneTask(task.id)">Done!</div></td>
+        <td><div class="btn btn-danger" v-on:click="doneTask(index)">Done!</div></td>
     </tr>
     <tr>
         <td><input class="form-control" v-model="newTask" v-on:change="validatePresence"></td>

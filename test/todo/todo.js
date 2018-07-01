@@ -29,7 +29,7 @@ var vm = new Vue({
             this.presence = 0;
         },
         doneTask: function(task_id){
-            this.$delete(this.tasks, task_id - 1);
+            this.$delete(this.tasks, task_id);
         },
         validatePresence: function(){
             if (this.newTask == '') {
