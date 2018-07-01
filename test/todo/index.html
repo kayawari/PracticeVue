@@ -10,8 +10,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr v-for="task in tasks">
-        <td is='tasks-item' v-bind:item="task"></td>
+    <tr v-for="(task, index) in tasks">
+        <td is='tasks-item' v-bind="{item: task, index: index}"></td>
         <td><div class="btn btn-danger" v-on:click="doneTask(task.id)">Done!</div></td>
     </tr>
     <tr>

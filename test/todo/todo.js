@@ -1,15 +1,15 @@
 var tasksItem = Vue.component('tasks-item', {
-    props: ['item'],
-    template: '<td>{{item.id}}: {{item.name}}</td>'
+    props: ['item', 'index'],
+    template: '<td>{{index}}: {{item.name}}</td>'
 })
 
 var vm = new Vue({
     el: '#tasks-index',
     data: {
         tasks: [
-            {id: 1, name: 'hoge'},
-            {id: 2, name: 'fuga'},
-            {id: 3, name: 'hogefuga'}
+            {name: 'hoge'},
+            {name: 'fuga'},
+            {name: 'hogefuga'}
         ],
         newTask: '',
         presence: 0
@@ -20,9 +20,7 @@ var vm = new Vue({
     },
     methods: {
         createTask: function(){
-            var id = this.tasks.length + 1;
             this.tasks.push({
-                id: id,
                 name: this.newTask
             });
 
